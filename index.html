@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebProfit Store</title>
+
+<style>
+:root {
+    --primary:#111;
+    --accent:#27ae60;
+    --promo:#ff3b30;
+}
+
+/* FOND TRANSPARENT STYLE GLASS */
+body {
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#e0e0e0,#f7f7f7);
+}
+
+/* EFFET GLASS */
+.glass {
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.1);
+}
+
+/* PROMO */
+.promo-bar {
+    background:linear-gradient(90deg,#ff3b30,#ff9500);
+    color:white;
+    text-align:center;
+    padding:12px;
+    font-weight:bold;
+}
+
+/* HEADER */
+header {
+    padding:25px 15px;
+    text-align:center;
+    margin:15px;
+}
+
+header img {
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 0 15px #27ae60;
+}
+
+/* PROFIL */
+.profile-text {
+    font-size:14px;
+    color:#333;
+    margin-top:10px;
+}
+
+/* PRODUITS */
+.container {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    padding:15px;
+}
+
+.product {
+    padding:15px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.product:hover {
+    transform:scale(1.05);
+}
+
+.product img {
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.product h3 {
+    margin:10px 0 5px;
+}
+
+.desc {
+    font-size:12px;
+    color:#555;
+    min-height:40px;
+}
+
+/* PRIX */
+.price {
+    color:#ff3b30;
+    font-weight:bold;
+    margin-top:8px;
+}
+
+/* BOUTON */
+.btn {
+    background:#111;
+    color:white;
+    padding:10px;
+    border:none;
+    width:100%;
+    border-radius:10px;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+/* PANIER PRO */
+.checkout {
+    margin:20px;
+    padding:20px;
+}
+
+.cart-box {
+    padding:15px;
+    margin-bottom:15px;
+}
+
+.cart-item {
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+/* TOTAL */
+.total {
+    font-size:18px;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+/* INPUT */
+input {
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+    border:none;
+    border-radius:10px;
+}
+
+/* CTA */
+.send-btn {
+    background:linear-gradient(90deg,#27ae60,#2ecc71);
+    color:white;
+    padding:12px;
+    border:none;
+    width:100%;
+    border-radius:10px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="promo-bar">
+🔥 -10% aujourd’hui seulement — Offre limitée 🔥
+</div>
+
+<header class="glass">
+
+<img src="https://i.ibb.co/VWtrk6rG/diaby.jpg">
+
+<h2>WebProfit Store</h2>
+
+<p class="profile-text">
+🚀 Boutique moderne qui transforme tes visiteurs en clients<br>
+💼 Produits sélectionnés • Qualité garantie • Prix imbattables<br>
+📲 Commande simple et rapide via WhatsApp
+</p>
+
+</header>
+
+<!-- PRODUITS -->
+<div class="container">
+
+<div class="product glass">
+<h3>Habit Élégant</h3>
+<img src="https://i.ibb.co/vK2xJqW/boss.jpg">
+<p class="desc">Style chic et moderne, idéal pour être élégant en toutes circonstances. Confort et classe réunis.</p>
+<p class="price">1 350 F</p>
+<button class="btn" onclick="add('Habit Élégant',1350)">Ajouter</button>
+</div>
+
+<div class="product glass">
+<h3>Pantalon Stylé</h3>
+<img src="https://i.ibb.co/5W9wrQHR/pantalon.jpg">
+<p class="desc">Pantalon tendance, confortable et parfait pour un look professionnel ou décontracté.</p>
+<p class="price">3 600 F</p>
+<button class="btn" onclick="add('Pantalon Stylé',3600)">Ajouter</button>
+</div>
+
+<div class="product glass">
+<h3>Sneakers</h3>
+<img src="https://i.ibb.co/shm0qVN/paire.jpg">
+<p class="desc">Sneakers ultra confortables, design moderne pour un style urbain irrésistible.</p>
+<p class="price">3 150 F</p>
+<button class="btn" onclick="add('Sneakers',3150)">Ajouter</button>
+</div>
+
+<div class="product glass">
+<h3>Chapeau</h3>
+<img src="https://i.ibb.co/8gM8R9md/ch.jpg">
+<p class="desc">Accessoire parfait pour compléter ton style avec élégance et originalité.</p>
+<p class="price">900 F</p>
+<button class="btn" onclick="add('Chapeau',900)">Ajouter</button>
+</div>
+
+</div>
+
+<!-- PANIER -->
+<div class="checkout glass">
+
+<h2>🛒 Panier</h2>
+
+<div id="cart" class="cart-box"></div>
+
+<div class="total">Total : <span id="total">0</span> FCFA</div>
+
+<input id="name" placeholder="Nom complet">
+<input id="loc" placeholder="Lieu de livraison">
+
+<button class="send-btn" onclick="send()">Commander sur WhatsApp</button>
+
+</div>
+
+<script>
+let total=0;
+
+function add(name,price){
+let div=document.createElement("div");
+div.className="cart-item";
+div.innerHTML = `<span>${name}</span><span>${price} F</span>`;
+document.getElementById("cart").appendChild(div);
+
+total+=price;
+document.getElementById("total").innerText=total;
+}
+
+function send(){
+let name=document.getElementById("name").value;
+
+if(name==""){
+alert("Remplis ton nom");
+return;
+}
+
+let message="🛒 Nouvelle commande WebProfit%0A";
+message+="Nom: "+name+"%0A";
+message+="Total: "+total+" FCFA";
+
+window.open("https://wa.me/2250719949973?text="+message);
+}
+</script>
+
+</body>
+</html>
