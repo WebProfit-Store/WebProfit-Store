@@ -6,164 +6,160 @@
 <title>WebProfit Store</title>
 
 <style>
-:root {
-    --primary:#111;
-    --accent:#27ae60;
-    --promo:#ff3b30;
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#f0f0f0,#ffffff);
 }
 
-/* FOND TRANSPARENT STYLE GLASS */
-body {
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:linear-gradient(135deg,#e0e0e0,#f7f7f7);
+.promo{
+background:linear-gradient(90deg,#ff3b30,#ff9500);
+color:white;
+text-align:center;
+padding:10px;
+font-weight:bold;
+animation:blink 1s infinite;
 }
 
-/* EFFET GLASS */
-.glass {
-    background:rgba(255,255,255,0.6);
-    backdrop-filter:blur(10px);
-    border-radius:20px;
-    box-shadow:0 8px 30px rgba(0,0,0,0.1);
+@keyframes blink{
+0%{opacity:1;}
+50%{opacity:0.4;}
+100%{opacity:1;}
 }
 
-/* PROMO */
-.promo-bar {
-    background:linear-gradient(90deg,#ff3b30,#ff9500);
-    color:white;
-    text-align:center;
-    padding:12px;
-    font-weight:bold;
+.glass{
+background:white;
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* HEADER */
-header {
-    padding:25px 15px;
-    text-align:center;
-    margin:15px;
+header{
+margin:15px;
+padding:20px;
+text-align:center;
 }
 
-header img {
-    width:110px;
-    height:110px;
-    border-radius:50%;
-    object-fit:cover;
-    box-shadow:0 0 15px #27ae60;
+header img{
+width:100px;
+height:100px;
+border-radius:50%;
+object-fit:cover;
 }
 
-/* PROFIL */
-.profile-text {
-    font-size:14px;
-    color:#333;
-    margin-top:10px;
+.search{
+margin:15px;
+padding:15px;
 }
 
-/* PRODUITS */
-.container {
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-    padding:15px;
+.search input{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
+background:#f2f2f2;
 }
 
-.product {
-    padding:15px;
-    text-align:center;
-    transition:0.3s;
+.container{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+padding:15px;
 }
 
-.product:hover {
-    transform:scale(1.05);
+.product{
+padding:12px;
 }
 
-.product img {
-    width:100%;
-    height:140px;
-    object-fit:cover;
-    border-radius:12px;
+.product img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:12px;
 }
 
-.product h3 {
-    margin:10px 0 5px;
+.title{
+font-weight:bold;
+margin-top:5px;
 }
 
-.desc {
-    font-size:12px;
-    color:#555;
-    min-height:40px;
+.description{
+font-size:12px;
+color:#555;
+margin-top:5px;
 }
 
-/* PRIX */
-.price {
-    color:#ff3b30;
-    font-weight:bold;
-    margin-top:8px;
+.price{
+color:#ff3b30;
+font-weight:bold;
+margin-top:5px;
 }
 
-/* BOUTON */
-.btn {
-    background:#111;
-    color:white;
-    padding:10px;
-    border:none;
-    width:100%;
-    border-radius:10px;
-    margin-top:10px;
-    font-weight:bold;
+.btn{
+background:black;
+color:white;
+border:none;
+padding:10px;
+width:100%;
+border-radius:10px;
+margin-top:8px;
 }
 
-/* PANIER PRO */
-.checkout {
-    margin:20px;
-    padding:20px;
+.checkout{
+margin:15px;
+padding:20px;
 }
 
-.cart-box {
-    padding:15px;
-    margin-bottom:15px;
+.cart-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:8px 0;
+border-bottom:1px solid #eee;
+font-size:14px;
 }
 
-.cart-item {
-    display:flex;
-    justify-content:space-between;
-    font-size:14px;
-    margin-bottom:5px;
+.remove{
+background:red;
+color:white;
+border:none;
+border-radius:6px;
+padding:4px 8px;
 }
 
-/* TOTAL */
-.total {
-    font-size:18px;
-    margin-top:10px;
-    font-weight:bold;
+.total{
+font-size:20px;
+font-weight:bold;
+margin-top:10px;
+color:#27ae60;
 }
 
-/* INPUT */
-input {
-    width:100%;
-    padding:10px;
-    margin-bottom:10px;
-    border:none;
-    border-radius:10px;
+input{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
+background:#f2f2f2;
+margin-top:10px;
+font-size:16px;
 }
 
-/* CTA */
-.send-btn {
-    background:linear-gradient(90deg,#27ae60,#2ecc71);
-    color:white;
-    padding:12px;
-    border:none;
-    width:100%;
-    border-radius:10px;
-    font-weight:bold;
+.send{
+background:linear-gradient(90deg,#27ae60,#2ecc71);
+color:white;
+border:none;
+padding:14px;
+width:100%;
+border-radius:10px;
+margin-top:10px;
+font-weight:bold;
+font-size:16px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="promo-bar">
-🔥 -10% aujourd’hui seulement — Offre limitée 🔥
-</div>
+<div class="promo">🔥 PROMO AUJOURD’HUI -20%</div>
 
 <header class="glass">
 
@@ -171,94 +167,181 @@ input {
 
 <h2>WebProfit Store</h2>
 
-<p class="profile-text">
-🚀 Boutique moderne qui transforme tes visiteurs en clients<br>
-💼 Produits sélectionnés • Qualité garantie • Prix imbattables<br>
-📲 Commande simple et rapide via WhatsApp
+<p class="desc-profil">
+🛍️ Bienvenue chez WebProfit Store — la boutique tendance  
+✨ Des articles stylés pour améliorer ton look  
+🚀 Livraison rapide partout  
+💰 Prix imbattables  
+📲 Commande facile sur WhatsApp  
+✔️ Clients satisfaits  
+✔️ Qualité premium
 </p>
+
+<a href="https://wa.me/2250719949973">
+<button class="btn">📲 WhatsApp</button>
+</a>
+
+<a href="https://www.tiktok.com/@webprofit.studio?_r=1&_t=ZS-956pCPBP6Zj">
+<button class="btn">🎵 TikTok</button>
+</a>
 
 </header>
 
-<!-- PRODUITS -->
+<div class="search glass">
+<input type="text" id="search" placeholder="🔎 Rechercher..." onkeyup="searchProduct()">
+</div>
+
 <div class="container">
 
 <div class="product glass">
-<h3>Habit Élégant</h3>
 <img src="https://i.ibb.co/vK2xJqW/boss.jpg">
-<p class="desc">Style chic et moderne, idéal pour être élégant en toutes circonstances. Confort et classe réunis.</p>
-<p class="price">1 350 F</p>
+<div class="title">Habit Élégant</div>
+<div class="description">🔥 Look chic instantané — idéal pour rendez-vous, travail ou sortie.</div>
+<div class="price">1 350 FCFA</div>
 <button class="btn" onclick="add('Habit Élégant',1350)">Ajouter</button>
 </div>
 
 <div class="product glass">
-<h3>Pantalon Stylé</h3>
+<img src="https://i.ibb.co/shm0qVN/paire.jpg">
+<div class="title">Sneakers Premium</div>
+<div class="description">👟 Confort extrême + style urbain.</div>
+<div class="price">3 150 FCFA</div>
+<button class="btn" onclick="add('Sneakers Premium',3150)">Ajouter</button>
+</div>
+
+<div class="product glass">
 <img src="https://i.ibb.co/5W9wrQHR/pantalon.jpg">
-<p class="desc">Pantalon tendance, confortable et parfait pour un look professionnel ou décontracté.</p>
-<p class="price">3 600 F</p>
+<div class="title">Pantalon Stylé</div>
+<div class="description">✨ Coupe moderne qui améliore immédiatement ton style.</div>
+<div class="price">3 600 FCFA</div>
 <button class="btn" onclick="add('Pantalon Stylé',3600)">Ajouter</button>
 </div>
 
 <div class="product glass">
-<h3>Sneakers</h3>
-<img src="https://i.ibb.co/shm0qVN/paire.jpg">
-<p class="desc">Sneakers ultra confortables, design moderne pour un style urbain irrésistible.</p>
-<p class="price">3 150 F</p>
-<button class="btn" onclick="add('Sneakers',3150)">Ajouter</button>
+<img src="https://i.ibb.co/8gM8R9md/ch.jpg">
+<div class="title">Chapeau Fashion</div>
+<div class="description">🧢 Accessoire tendance.</div>
+<div class="price">900 FCFA</div>
+<button class="btn" onclick="add('Chapeau Fashion',900)">Ajouter</button>
 </div>
 
 <div class="product glass">
-<h3>Chapeau</h3>
-<img src="https://i.ibb.co/8gM8R9md/ch.jpg">
-<p class="desc">Accessoire parfait pour compléter ton style avec élégance et originalité.</p>
-<p class="price">900 F</p>
-<button class="btn" onclick="add('Chapeau',900)">Ajouter</button>
+<img src="https://i.ibb.co/3mfbBYNL/maillot.jpg">
+<div class="title">Maillot Côte d’Ivoire</div>
+<div class="description">🇨🇮 Supporte les éléphants avec style premium.</div>
+<div class="price">4 500 FCFA</div>
+<button class="btn" onclick="add('Maillot Côte d’Ivoire',4500)">Ajouter</button>
+</div>
+
+<div class="product glass">
+<img src="https://i.ibb.co/kgzdtCtD/pro.jpg">
+<div class="title">AirPods Pro</div>
+<div class="description">🎧 Son premium + réduction de bruit active.</div>
+<div class="price">95 000 FCFA</div>
+<button class="btn" onclick="add('AirPods Pro',95000)">Ajouter</button>
+</div>
+
+<div class="product glass">
+<img src="https://i.ibb.co/XfSpqDnN/p40.jpg">
+<div class="title">Tecno Spark 40</div>
+<div class="description">📱 Grand écran + batterie puissante.</div>
+<div class="price">85 000 FCFA</div>
+<button class="btn" onclick="add('Tecno Spark 40',85000)">Ajouter</button>
+</div>
+
+<div class="product glass">
+<img src="https://i.ibb.co/vCXJK2JS/ip15.jpg">
+<div class="title">iPhone 15</div>
+<div class="description">🍎 Puissance Apple + caméra incroyable.</div>
+<div class="price">450 000 FCFA</div>
+<button class="btn" onclick="add('iPhone 15',450000)">Ajouter</button>
 </div>
 
 </div>
 
-<!-- PANIER -->
 <div class="checkout glass">
 
 <h2>🛒 Panier</h2>
+<div id="cart"></div>
 
-<div id="cart" class="cart-box"></div>
+<div class="total">
+Total : <span id="total">0</span> FCFA
+</div>
 
-<div class="total">Total : <span id="total">0</span> FCFA</div>
+<input id="name" placeholder="Nom complet" inputmode="text">
+<input id="loc" placeholder="Lieu livraison" inputmode="text">
 
-<input id="name" placeholder="Nom complet">
-<input id="loc" placeholder="Lieu de livraison">
-
-<button class="send-btn" onclick="send()">Commander sur WhatsApp</button>
+<button class="send" onclick="send()">
+Commander sur WhatsApp
+</button>
 
 </div>
 
 <script>
-let total=0;
+
+let cart = [];
+let total = 0;
 
 function add(name,price){
-let div=document.createElement("div");
-div.className="cart-item";
-div.innerHTML = `<span>${name}</span><span>${price} F</span>`;
-document.getElementById("cart").appendChild(div);
+cart.push({name,price});
+renderCart();
+}
 
-total+=price;
+function removeItem(index){
+cart.splice(index,1);
+renderCart();
+}
+
+function renderCart(){
+let html="";
+total=0;
+
+cart.forEach((item,i)=>{
+total+=item.price;
+
+html+=`
+<div class="cart-item">
+<span>${item.name}</span>
+<span>${item.price}F</span>
+<button class="remove" onclick="removeItem(${i})">X</button>
+</div>
+`;
+});
+
+document.getElementById("cart").innerHTML=html;
 document.getElementById("total").innerText=total;
 }
 
-function send(){
-let name=document.getElementById("name").value;
+function searchProduct(){
+let input=document.getElementById("search").value.toLowerCase();
+let products=document.querySelectorAll(".product");
 
-if(name==""){
-alert("Remplis ton nom");
-return;
+products.forEach(p=>{
+p.style.display=p.innerText.toLowerCase().includes(input) ? "block":"none";
+});
 }
 
-let message="🛒 Nouvelle commande WebProfit%0A";
-message+="Nom: "+name+"%0A";
-message+="Total: "+total+" FCFA";
+function send(){
+
+let name=document.getElementById("name").value;
+let loc=document.getElementById("loc").value;
+
+let items="";
+cart.forEach(item=>{
+items+=item.name+" - "+item.price+"F%0A";
+});
+
+let message=
+"🛒 Commande WebProfit%0A%0A"+
+items+
+"%0ATotal: "+total+" FCFA%0A"+
+"Nom: "+name+"%0A"+
+"Lieu: "+loc;
 
 window.open("https://wa.me/2250719949973?text="+message);
+
 }
+
 </script>
 
 </body>
